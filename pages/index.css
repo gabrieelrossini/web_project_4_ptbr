@@ -1,10 +1,16 @@
+/** 
+ * Definições page 
+ */
 
 .page {
     background-color: #000000;
     max-width: 1280px;
     margin: 0 auto;
     justify-content: center;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media screen and (max-width: 480px) {
@@ -13,9 +19,14 @@
     }
 }
 
+/** 
+ * Definições header 
+ */
+
 .header {
     padding-top: 5vh;
     padding-bottom: 5vh;
+    width: 880px;
 }
 
 .header__img {
@@ -29,14 +40,23 @@
     margin-top: 5vh;
 }
 
+/** 
+ * Definições main 
+ */
+
 .main {
-    width: 100vh;
+    width: 880px;
 }
 
+/** 
+ * Definições profile 
+ */
+
 .profile {
+    width: 880px;
+    height: 120px;
     display: flex;
     align-items: center;
-    width: 100%;
 }
 
 .profile__img {
@@ -45,8 +65,10 @@
 }
 
 .profile__data {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    align-items: end;
 }
 
 .profile__edit {
@@ -54,6 +76,7 @@
     height: 24px;
     background-color: #000000;
     border: solid 1px #ffffff;
+    position: relative;
 }
 
 .profile__name {
@@ -61,6 +84,7 @@
     font-family:'Inter';
     font-weight: 500;
     font-size: 5vh;
+    row: 1;
 }
 
 .profile__info {
@@ -82,6 +106,12 @@
     height: 22px;
 }
 
+/** 
+ * Definições 
+ */
+
 .form {
     display: none;
+    position: fixed;
+    z-index: 999999;
 }
