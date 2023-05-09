@@ -6,7 +6,6 @@
     background-color: #000000;
     max-width: 1280px;
     margin: 0 auto;
-    justify-content: center;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -24,29 +23,23 @@
  */
 
 .header {
-    padding-top: 5vh;
-    padding-bottom: 5vh;
+    margin-top: 45px;
     width: 880px;
+    height: 74px;
 }
 
 .header__img {
-    width: 20vh
+    width: 173px;
+    height: 33px;
 }
 
 .header__line {
     width: 100%;
     border: 1px solid #545454;
     opacity: 0.3;
-    margin-top: 5vh;
+    margin-top: 41px;
 }
 
-/** 
- * Definições main 
- */
-
-.main {
-    width: 880px;
-}
 
 /** 
  * Definições profile 
@@ -57,57 +50,72 @@
     height: 120px;
     display: flex;
     align-items: center;
+    margin-top: 36px;
 }
 
 .profile__img {
     border-radius: 50%;
-    width: 15vh;
+    width: 128px;
 }
 
-.profile__data {
+/** 
+ * Definições data
+ */
+
+.data {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
     align-items: end;
+    column-gap: 18px;
+    row-gap: 16px;
+    margin-left: 30px;
 }
 
-.profile__edit {
+.data__name {
+    color: #ffffff;
+    font-family:'Inter';
+    font-weight: 500;
+    font-size: 42px;
+    margin: 0;
+}
+
+.data__info {
+    color: #ffffff;
+    font-family:'Inter';
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0;
+}
+
+/** 
+ * Definições button 
+ */
+
+ .button__edit {
     width: 24px;
     height: 24px;
     background-color: #000000;
     border: solid 1px #ffffff;
-    position: relative;
+    cursor: pointer;
 }
 
-.profile__name {
-    color: #ffffff;
-    font-family:'Inter';
-    font-weight: 500;
-    font-size: 5vh;
-    row: 1;
-}
-
-.profile__info {
-    color: #ffffff;
-    font-family:'Inter';
-    font-weight: 500;
-    font-size: 2.5vh;
-}
-
-.profile__add {
-    border: solid 1px #ffffff;
+.button__add {
+    border: solid 2px #ffffff;
     background-color: #000000;
     width: 150px;
     height: 50px;
+    cursor: pointer;
+    margin-left: auto;
 }
 
-.profile__cross {
+.button__cross {
     width: 22px;
     height: 22px;
 }
 
 /** 
- * Definições 
+ * Definições form
  */
 
 .form {
@@ -115,3 +123,8 @@
     position: fixed;
     z-index: 999999;
 }
+
+
+
+
+
