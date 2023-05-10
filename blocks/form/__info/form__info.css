@@ -1,0 +1,17 @@
+.form__info {
+    border: none;
+    width: 358px;
+    height: 24px;
+    background-color: transparent;
+    font-family: 'Inter';
+    font-size: 14px;
+    margin-top: 30px;
+    border-bottom: 1px solid #000000;
+}
+
+@media screen and (max-width: 480px) {
+    .form__info{
+        width: 238px;
+        height: 17px;
+    }
+}

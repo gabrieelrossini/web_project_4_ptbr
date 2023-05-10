@@ -1,0 +1,7 @@
+.button__edit {
+    width: 24px;
+    height: 24px;
+    background-color: #000000;
+    border: solid 1px #ffffff;
+    cursor: pointer;
+}

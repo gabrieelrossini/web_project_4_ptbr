@@ -1,128 +1,65 @@
+@import url(../vendor/normalize.css);
+
 /** 
  * Definições page 
- */
+*/
 
-.page {
-    background-color: #000000;
-    max-width: 1280px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-}
-
-@media screen and (max-width: 480px) {
-    .page {
-        max-width: 320px;
-    }
-}
+ @import url(../blocks/page/page.css);
 
 /** 
  * Definições header 
- */
+*/
 
-.header {
-    margin-top: 45px;
-    width: 880px;
-    height: 74px;
-}
-
-.header__img {
-    width: 173px;
-    height: 33px;
-}
-
-.header__line {
-    width: 100%;
-    border: 1px solid #545454;
-    opacity: 0.3;
-    margin-top: 41px;
-}
-
+ @import url(../blocks/header/header.css);
+ @import url(../blocks/header/__img/header__img.css);
+ @import url(../blocks/header/__line/header__line.css);
 
 /** 
  * Definições profile 
- */
+*/
 
-.profile {
-    width: 880px;
-    height: 120px;
-    display: flex;
-    align-items: center;
-    margin-top: 36px;
-}
-
-.profile__img {
-    border-radius: 50%;
-    width: 128px;
-}
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__img/profile__img.css);
 
 /** 
  * Definições data
- */
+*/
 
-.data {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    align-items: end;
-    column-gap: 18px;
-    row-gap: 16px;
-    margin-left: 30px;
-}
-
-.data__name {
-    color: #ffffff;
-    font-family:'Inter';
-    font-weight: 500;
-    font-size: 42px;
-    margin: 0;
-}
-
-.data__info {
-    color: #ffffff;
-    font-family:'Inter';
-    font-weight: 400;
-    font-size: 18px;
-    margin: 0;
-}
+ @import url(../blocks/data/data.css);
+ @import url(../blocks/data/__name/data__name.css);
+ @import url(../blocks/data/__info/data__info.css);
 
 /** 
  * Definições button 
- */
+*/
 
- .button__edit {
-    width: 24px;
-    height: 24px;
-    background-color: #000000;
-    border: solid 1px #ffffff;
-    cursor: pointer;
-}
-
-.button__add {
-    border: solid 2px #ffffff;
-    background-color: #000000;
-    width: 150px;
-    height: 50px;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-.button__cross {
-    width: 22px;
-    height: 22px;
-}
+@import url(../blocks/button/__edit/button__edit.css);
+@import url(../blocks/button/__add/button__add.css);
+@import url(../blocks/button/__cross/button__cross.css);
+@import url(../blocks/button/__save/button__save.css);
+@import url(../blocks/button/__close/button__close.css);
+@import url(../blocks/button/__image/button__image.css);
 
 /** 
  * Definições form
- */
+*/
 
-.form {
-    display: none;
-    position: fixed;
-    z-index: 999999;
-}
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__container/form__container.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__name/form__name.css);
+@import url(../blocks/form/__info/form__info.css);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
