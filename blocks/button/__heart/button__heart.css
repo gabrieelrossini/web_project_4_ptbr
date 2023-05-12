@@ -1,0 +1,12 @@
+.button__heart {
+    width: 21px;
+    height: 19px;
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.button__heart:hover {
+    opacity: 0.5;
+}

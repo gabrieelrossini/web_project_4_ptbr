@@ -34,11 +34,11 @@
 */
 
 @import url(../blocks/button/__edit/button__edit.css);
-@import url(../blocks/button/__add/button__add.css);
-@import url(../blocks/button/__cross/button__cross.css);
 @import url(../blocks/button/__save/button__save.css);
 @import url(../blocks/button/__close/button__close.css);
-@import url(../blocks/button/__image/button__image.css);
+@import url(../blocks/button/__add/button__add.css);
+@import url(../blocks/button/__cross/button__cross.css);
+@import url(../blocks/button/__heart/button__heart.css);
 
 /** 
  * Definições form
@@ -49,3 +49,25 @@
 @import url(../blocks/form/__title/form__title.css);
 @import url(../blocks/form/__name/form__name.css);
 @import url(../blocks/form/__info/form__info.css);
+
+/** 
+ * Definições cards
+*/
+
+@import url(../blocks/cards/cards.css);
+
+/** 
+ * Definições card
+*/
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__info/card__info.css);
+@import url(../blocks/card/__title/card__title.css);
+
+/** 
+ * Definições footer
+*/
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);

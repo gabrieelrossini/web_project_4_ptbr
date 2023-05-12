@@ -1,0 +1,12 @@
+.card__title {
+    font-family: 'Inter';
+    font-size: 24px;
+    font-weight: 900;
+    width: 246px;
+    color: #000000;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-left: 21px;
+    margin-bottom: 31px;
+}
