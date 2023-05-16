@@ -7,11 +7,3 @@
     color: #545454;
 
 }
-
-@media screen and (max-width: 480px) {
-    .footer__text {
-        font-size: 14px;
-        width: 282px;
-        height: 14px;
-    }
-}

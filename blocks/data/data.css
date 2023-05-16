@@ -1,9 +1,6 @@
 .data {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    align-items: end;
-    column-gap: 18px;
-    row-gap: 16px;
-    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 18px;
+    margin-left: 36px;
 }

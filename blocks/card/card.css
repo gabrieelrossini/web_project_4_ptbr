@@ -5,10 +5,3 @@
     background-color: #ffffff;
     border-radius: 10px;
 }
-
-@media screen and (max-width: 480px) {
-    .card {
-        width: 282px;
-        height: 361px;
-    }
-}

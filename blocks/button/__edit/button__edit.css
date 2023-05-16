@@ -4,4 +4,9 @@
     background-color: #000000;
     border: solid 1px #ffffff;
     cursor: pointer;
+    margin-bottom: 22px;
+}
+
+.button__edit:hover {
+    opacity: 0.6;
 }

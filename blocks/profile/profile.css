@@ -1,7 +1,26 @@
 .profile {
-    width: 880px;
-    height: 120px;
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-top: 36px;
+}
+
+@media screen and (max-width: 900px) {
+    .profile {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .profile {
+        max-width: 480px;
+        bottom: 36px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile {
+        max-width: 320px;
+    }
 }

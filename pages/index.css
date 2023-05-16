@@ -1,13 +1,23 @@
+/** 
+* Vendor
+*/
+
 @import url(../vendor/normalize.css);
 
 /** 
- * Definições page 
+* Root
+*/
+
+@import url(../blocks/root/root.css);
+
+/** 
+* Definições page 
 */
 
  @import url(../blocks/page/page.css);
 
 /** 
- * Definições header 
+* Definições header 
 */
 
  @import url(../blocks/header/header.css);
@@ -15,14 +25,14 @@
  @import url(../blocks/header/__line/header__line.css);
 
 /** 
- * Definições profile 
+* Definições profile 
 */
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__img/profile__img.css);
 
 /** 
- * Definições data
+* Definições data
 */
 
  @import url(../blocks/data/data.css);
@@ -30,7 +40,7 @@
  @import url(../blocks/data/__info/data__info.css);
 
 /** 
- * Definições button 
+* Definições button 
 */
 
 @import url(../blocks/button/__edit/button__edit.css);
@@ -41,7 +51,7 @@
 @import url(../blocks/button/__heart/button__heart.css);
 
 /** 
- * Definições form
+* Definições form
 */
 
 @import url(../blocks/form/form.css);
@@ -51,13 +61,13 @@
 @import url(../blocks/form/__info/form__info.css);
 
 /** 
- * Definições cards
+* Definições cards
 */
 
 @import url(../blocks/cards/cards.css);
 
 /** 
- * Definições card
+* Definições card
 */
 
 @import url(../blocks/card/card.css);
@@ -66,7 +76,7 @@
 @import url(../blocks/card/__title/card__title.css);
 
 /** 
- * Definições footer
+* Definições footer
 */
 
 @import url(../blocks/footer/footer.css);
