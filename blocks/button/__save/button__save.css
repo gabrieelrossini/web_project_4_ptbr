@@ -1,3 +1,21 @@
 .button__save {
+    cursor: pointer;
+    align-self: center;
+    width: 358px;
+    height: 50px;
+    margin-top: 46px;
+    margin-bottom: 36px;
+    color: #ffffff;
+    background-color: #000000;
+}
 
+.button__save:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+    .button__save {
+        width: 238px;
+        height: 46px;
+    }
 }
