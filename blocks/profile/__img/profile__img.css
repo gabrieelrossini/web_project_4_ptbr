@@ -5,14 +5,10 @@
 
 @media screen and (max-width: 900px) {
     .profile__img {
-        margin-right: 10px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .profile__img {
-        position: absolute;
-        top: 150px;
-        margin-right: 0;
     }
 }

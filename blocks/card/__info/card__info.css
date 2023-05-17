@@ -2,7 +2,6 @@
     width: 246px;
     height: 30px;
     display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    position: absolute;
+    align-self: center;
+    margin: 25px auto 31px auto;
 }

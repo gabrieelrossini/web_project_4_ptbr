@@ -5,8 +5,23 @@
     height: 50px;
     cursor: pointer;
     margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .button__add:hover {
     opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+    .button__add {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .button__add {
+        width: 282px;
+    }
 }
