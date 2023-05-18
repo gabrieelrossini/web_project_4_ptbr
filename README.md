@@ -1,16 +1,25 @@
-# Projeto 4:  EUA Afora
+# Nome do Projeto
 
-### Visão geral
+Around the U.S
 
-* Figma
-* Imagens
+# Decrição do Projeto
 
-**Figma**
+Projeto elaborado pela Practicum com o intuito de aprimorar as habilidades já desenvolvidas com HTML e CSS, além da aplicação de conceitos básicos de JavaScript.
 
 * [Link para o projeto no Figma](https://www.figma.com/file/XfB6BSINvliub43JgKza1e/WEB.-Sprint-4.-Around-The-U.S.-desktop-%2B-mobile-pt)
 
-**Imagens**
+# Status do Projeto
 
-A maneira como você fará isso no trabalho é exportando imagens diretamente do Figma — recomendamos fazer isso para praticar mais. Não se esqueça de otimizá-los [aqui](https://tinypng.com/), para que seu projeto carregue mais rápido.
+Em avaliação.
 
-Divirta-se com JavaScript!
+# Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JS
+
+# Autor
+
+Gabriel Rossini
+
+- contato: gabrieelrossini23@hotmail.com
