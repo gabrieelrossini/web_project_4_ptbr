@@ -36,7 +36,7 @@ saveButton.addEventListener("click", function() {
 //botão de like
 
 const heartButton = document.querySelector(".button__heart");
-const heartBlack = document.querySelector("#heart__black");
+const heartBlack = document.querySelectorAll(".heart__black");
 
 heartButton.addEventListener("click", function() {
     if (heartBlack.getAttribute("src") === "./images/heart.svg") {

@@ -2,13 +2,3 @@
     border-radius: 50%;
     width: 128px;
 }
-
-@media screen and (max-width: 900px) {
-    .profile__img {
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .profile__img {
-    }
-}
