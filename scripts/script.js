@@ -38,3 +38,11 @@ closeButton.addEventListener("click", function() {
 });
 
 //botão de like
+
+const heartButtons = document.querySelectorAll(".button__heart");
+
+heartButtons.forEach(heartButton => {
+    heartButton.addEventListener("click" , () => {
+        heartButton.classList.toggle("button__heart-active");
+    });
+});

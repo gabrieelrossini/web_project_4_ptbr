@@ -5,8 +5,19 @@
     border: none;
     background-color: #ffffff;
     margin-bottom: 30px;
+    background-image: url("/images/heart.svg");
 }
 
 .button__heart:hover {
     opacity: 0.5;
+}
+
+.button__heart-active {
+    background-image: url("/images/blackheart.svg");
+    width: 21px;
+    height: 19px;
+    cursor: pointer;
+    border: none;
+    background-color: #ffffff;
+    margin-bottom: 30px;
 }
