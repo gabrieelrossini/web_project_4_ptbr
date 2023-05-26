@@ -55,6 +55,7 @@
 @import url(../blocks/button/__add/button__add.css);
 @import url(../blocks/button/__cross/button__cross.css);
 @import url(../blocks/button/__heart/button__heart.css);
+@import url(../blocks/button/__heart/button__heart-active.css);
 
 /** 
 * Definições form
