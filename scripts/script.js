@@ -46,3 +46,54 @@ heartButtons.forEach(heartButton => {
         heartButton.classList.toggle("button__heart-active");
     });
 });
+
+//template cards
+
+const cardTemplate = document.querySelector("#card-template");
+const cardContainer = document.querySelector(".cards");
+const cardsData = [
+    {
+        src:"./images/yosemite.jpg",
+        alt:"retrato fotográfico do Vale de Yosemite",
+        title: "Vale de Yosemite"
+
+    },
+    {
+        src:"./images/louise.jpg",
+        alt:"retrato fotográfico do Lago Louise",
+        title: "Lago Louise"
+    },
+    {
+        src:"./images/montanhas.jpg",
+        alt:"retrato fotográfico das Montanhas Carecas",
+        title: "Montanhas Carecas"
+    },
+    {
+        src:"./images/latemar.jpg",
+        alt:"retrato fotográfico de Latemar",
+        title: "Latemar"
+    },
+    {
+        src:"./images/vanoise.jpg",
+        alt:"retrato fotográfico do Parque Nacional de Vanoise",
+        title: "Vanoise National Park"
+    },
+    {
+        src:"./images/braies.jpg",
+        alt:"retrato fotográfico do Lago de Braies",
+        title: "Lago di Braies"
+    },
+];
+
+cardsData.forEach(data => {
+    const card = cardTemplate.content.cloneNode(true);
+
+    const image = card.querySelector(".card__image");
+    image.src = data.src;
+    image.alt = data.alt;
+
+    const title = card.querySelector(".card__title");
+    title.textContent = data.title;
+
+    cardContainer.appendChild(card);
+});
