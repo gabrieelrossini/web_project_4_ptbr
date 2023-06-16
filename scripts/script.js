@@ -95,5 +95,10 @@ cardsData.forEach(data => {
     const title = card.querySelector(".card__title");
     title.textContent = data.title;
 
+    const buttonTrash = card.querySelector(".button__trash");
+    buttonTrash.addEventListener("click", () => {
+        buttonTrash.closest(".card").remove();
+    });
+
     cardContainer.appendChild(card);
 });
