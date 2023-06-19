@@ -57,16 +57,7 @@
 @import url(../blocks/button/__heart/button__heart.css);
 @import url(../blocks/button/__heart/button__heart-active.css);
 @import url(../blocks/button/__trash/button__trash.css);
-
-/** 
-* Definições form
-*/
-
-@import url(../blocks/form/form.css);
-@import url(../blocks/form/__container/form__container.css);
-@import url(../blocks/form/__title/form__title.css);
-@import url(../blocks/form/__name/form__name.css);
-@import url(../blocks/form/__info/form__info.css);
+@import url(../blocks/button/__create/button__create.css);
 
 /** 
 * Definições cards
@@ -89,3 +80,23 @@
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
+
+/** 
+* Definições form
+*/
+
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__container/form__container.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__name/form__name.css);
+@import url(../blocks/form/__info/form__info.css);
+
+/**
+* Definições create
+*/
+
+@import url(../blocks/create/create.css);
+@import url(../blocks/create/__container/create__container.css);
+@import url(../blocks/create/__title/create__title.css);
+@import url(../blocks/create/__name/create__name.css);
+@import url(../blocks/create/__info/create__info.css);
