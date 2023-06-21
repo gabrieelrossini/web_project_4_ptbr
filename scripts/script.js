@@ -1,16 +1,15 @@
 //seletores
 
-const editButton = document.querySelector(".button__edit");
-const saveButton = document.querySelector(".button__save");
-const closeButton = document.querySelector(".button__close");
-const form = document.querySelector(".form");
 const nameInput = document.querySelector(".form__name");
 const infoInput = document.querySelector(".form__info");
 const nameData = document.querySelector(".data__name");
 const infoData = document.querySelector(".data__info");
-const formActive = document.querySelector(".form__active");
 
 //botão edit ativo
+
+const editButton = document.querySelector(".button__edit");
+const form = document.querySelector(".form");
+const formActive = document.querySelector(".form-active");
 
 editButton.addEventListener("click", function() {
     form.classList.toggle("form-active");
@@ -18,6 +17,8 @@ editButton.addEventListener("click", function() {
 });
 
 //botão save ativo, alterando as informações do formulário
+
+const saveButton = document.querySelector(".button__save");
 
 saveButton.addEventListener("click", function() {
     event.preventDefault();
@@ -30,6 +31,8 @@ saveButton.addEventListener("click", function() {
 });
 
 //botão close ativo
+
+const closeButton = document.querySelector(".button__close");
 
 closeButton.addEventListener("click", function() {
     event.preventDefault();
@@ -101,4 +104,15 @@ cardsData.forEach(data => {
     });
 
     cardContainer.appendChild(card);
+});
+
+//botão add ativo
+
+const addButton = document.querySelector(".button__add");
+const create = document.querySelector(".create");
+const createActive = document.querySelector(".create-active");
+
+addButton.addEventListener("click", function() {
+    form.classList.toggle("create-active");
+    form.classList.toggle("create");
 });
