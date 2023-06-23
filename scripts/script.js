@@ -1,10 +1,3 @@
-//seletores
-
-const nameInput = document.querySelector(".form__name");
-const infoInput = document.querySelector(".form__info");
-const nameData = document.querySelector(".data__name");
-const infoData = document.querySelector(".data__info");
-
 //botão edit ativo
 
 const editButton = document.querySelector(".button__edit");
@@ -19,11 +12,15 @@ editButton.addEventListener("click", function() {
 //botão save ativo, alterando as informações do formulário
 
 const saveButton = document.querySelector(".button__save");
+const nameForm = document.querySelector(".form__name");
+const infoForm = document.querySelector(".form__info");
+const nameData = document.querySelector(".data__name");
+const infoData = document.querySelector(".data__info");
 
 saveButton.addEventListener("click", function() {
     event.preventDefault();
-    const newName = nameInput.value;
-    const newInfo = infoInput.value;
+    const newName = nameForm.value;
+    const newInfo = infoForm.value;
     nameData.textContent = newName;
     infoData.textContent = newInfo;
     form.classList.toggle("form-active");
@@ -113,6 +110,24 @@ const create = document.querySelector(".create");
 const createActive = document.querySelector(".create-active");
 
 addButton.addEventListener("click", function() {
+    form.classList.toggle("create-active");
+    form.classList.toggle("create");
+});
+
+//botão create ativo, alterando as informações do formulário
+
+const createButton = document.querySelector(".button__create");
+const nameCreate = document.querySelector(".create__name");
+const infoCreate = document.querySelector(".create__info");
+
+
+
+//botão exit ativo
+
+const exitButton = document.querySelector(".button__exit");
+
+exitButton.addEventListener("click", function() {
+    event.preventDefault();
     form.classList.toggle("create-active");
     form.classList.toggle("create");
 });
