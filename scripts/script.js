@@ -110,8 +110,8 @@ const create = document.querySelector(".create");
 const createActive = document.querySelector(".create-active");
 
 addButton.addEventListener("click", function() {
-    form.classList.toggle("create-active");
-    form.classList.toggle("create");
+    create.classList.toggle("create-active");
+    create.classList.toggle("create");
 });
 
 //botão create ativo, alterando as informações do formulário
@@ -120,6 +120,26 @@ const createButton = document.querySelector(".button__create");
 const nameCreate = document.querySelector(".create__name");
 const infoCreate = document.querySelector(".create__info");
 
+createButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    const name = nameCreate.value;
+    const imageSrc = infoCreate.value;
+    const card = cardTemplate.content.cloneNode(true);
+
+    const title = card.querySelector(".card__title");
+    title.textContent = name;
+    const image = card.querySelector(".card__image");
+    image.src = imageSrc;
+    image.alt = name;
+
+    cardContainer.appendChild(card);
+
+    nameCreate.value = "";
+    infoCreate.value = "";
+
+    create.classList.toggle("create-active");
+    create.classList.toggle("create");
+});
 
 
 //botão exit ativo
@@ -128,6 +148,6 @@ const exitButton = document.querySelector(".button__exit");
 
 exitButton.addEventListener("click", function() {
     event.preventDefault();
-    form.classList.toggle("create-active");
-    form.classList.toggle("create");
+    create.classList.toggle("create-active");
+    create.classList.toggle("create");
 });
