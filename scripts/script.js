@@ -37,15 +37,7 @@ closeButton.addEventListener("click", function() {
     form.classList.toggle("form");
 });
 
-//botão de like
 
-const heartButtons = document.querySelectorAll(".button__heart");
-
-heartButtons.forEach(heartButton => {
-    heartButton.addEventListener("click" , () => {
-        heartButton.classList.toggle("button__heart-active");
-    });
-});
 
 //template cards
 
@@ -85,6 +77,8 @@ const cardsData = [
     },
 ];
 
+// conteúdo dos cards
+
 cardsData.forEach(data => {
     const card = cardTemplate.content.cloneNode(true);
 
@@ -95,19 +89,31 @@ cardsData.forEach(data => {
     const title = card.querySelector(".card__title");
     title.textContent = data.title;
 
-    const buttonTrash = card.querySelector(".button__trash");
+    const buttonTrash = document.createElement("button");
+    buttonTrash.classList.add("button__trash");
+    card.querySelector(".card").appendChild(buttonTrash);
+
     buttonTrash.addEventListener("click", () => {
-        buttonTrash.closest(".card").remove();
-    });
+    buttonTrash.closest(".card").remove();
+  });
 
     cardContainer.appendChild(card);
+});
+
+//botão de like
+
+const heartButtons = document.querySelectorAll(".button__heart");
+
+heartButtons.forEach(heartButton => {
+    heartButton.addEventListener("click" , () => {
+        heartButton.classList.toggle("button__heart-active");
+    });
 });
 
 //botão add ativo
 
 const addButton = document.querySelector(".button__add");
 const create = document.querySelector(".create");
-const createActive = document.querySelector(".create-active");
 
 addButton.addEventListener("click", function() {
     create.classList.toggle("create-active");
