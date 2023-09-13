@@ -138,6 +138,14 @@ createButton.addEventListener("click", function(event) {
     image.src = imageSrc;
     image.alt = name;
 
+    const buttonTrash = document.createElement("button");
+    buttonTrash.classList.add("button__trash");
+    card.querySelector(".card").appendChild(buttonTrash);
+
+    buttonTrash.addEventListener("click", () => {
+    buttonTrash.closest(".card").remove();
+  });
+
     cardContainer.appendChild(card);
 
     nameCreate.value = "";
