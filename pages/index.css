@@ -59,6 +59,7 @@
 @import url(../blocks/button/__trash/button__trash.css);
 @import url(../blocks/button/__create/button__create.css);
 @import url(../blocks/button/__exit/button__exit.css);
+@import url(../blocks/button/__popup/button__popup.css);
 
 /** 
 * Definições cards

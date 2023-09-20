@@ -1,0 +1,13 @@
+.button__popup {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: relative;
+    top: -230px;
+    background-color: transparent;
+}
+
+.button__popup:hover {
+    opacity: 0.6;
+}

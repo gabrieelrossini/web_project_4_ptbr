@@ -100,8 +100,8 @@ image.alt = data.alt;
     
 image.addEventListener('click', handleImageClick);
     
-const title = card.querySelector(".card__title");
-title.textContent = data.title;
+const cardTitle = card.querySelector(".card__title");
+cardTitle.textContent = data.title;
     
 const buttonTrash = document.createElement("button");
 buttonTrash.classList.add("button__trash");
@@ -123,29 +123,30 @@ function handleImageClick(e) {
 const image = e.currentTarget;
     
 const src = image.src;
-const title = image.title;
+const imageTitle = image.title;
     
-openPopup(src, title);
+openPopup(src, imageTitle);
     
 }
     
 // Função para abrir popup
-function openPopup(src, title){
+function openPopup(src, imageTitle){
     
 const popup = document.querySelector('.popup');
+    
+const closeBtn = document.querySelector('.button__popup');
+    
+closeBtn.addEventListener('click', () => {
+popup.classList.remove('popup-active');
+});
+    
 const popupImage = popup.querySelector('.popup__image');
 const popupTitle = popup.querySelector('.popup__title');
     
 popupImage.src = src;
-popupTitle.textContent = title;
+popupTitle.textContent = imageTitle;
     
 popup.classList.add('popup-active');
-    
-popup.addEventListener('click', function(e){
-if(e.target.classList.contains('button__close')) {
-popup.classList.remove('popup-active')
-}
-});
     
 }
   

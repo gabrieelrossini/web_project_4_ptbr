@@ -1,9 +1,11 @@
 .popup__title {
     position: relative;
-    top: 10px; 
+    top: 10px;
+    margin-left: 0;
     display: block;
     color: #fff;
     font-size: 12px;
     font-weight: 400;
-    margin-left: 0;
-  }
+    border: 1px solid red;
+    z-index: 1;
+}
