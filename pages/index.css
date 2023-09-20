@@ -101,3 +101,11 @@
 @import url(../blocks/create/__title/create__title.css);
 @import url(../blocks/create/__name/create__name.css);
 @import url(../blocks/create/__info/create__info.css);
+
+/**
+* Definições popup
+*/
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__image/popup__image.css);

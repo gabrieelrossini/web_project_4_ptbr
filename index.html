@@ -16,7 +16,7 @@
             <img class="profile__img" src="./images/img-profile.jpg" alt="um senhor de idade, com óculos e vestido de uma touca vermelha, sorrindo">
             <div class="data">
                 <p class="data__name">Jacques Cousteau</p>
-                <p class="data__info">Explorar</p>
+                <p class="data__info">Explorador</p>
             </div>
             <button class="button__edit">
                 <img src="./images/img-edit.svg" alt="uma caneta que indica o local onde o usuário pode editar o perfil">
@@ -29,13 +29,11 @@
             <template id="card-template">
                 <div class="card">
                     <img class="card__image" src=" " alt=" ">
-                    <div class="card__info">
+                    <div class="card__info button">
                         <h2 class="card__title"></h2>
                         <button class="button__heart">
                         </button>
                     </div>
-                    <button class="button__trash">
-                    </button>
                 </div>
             </template>
         </section>
@@ -46,8 +44,8 @@
     <div class="form">
         <form class="form__container button">
             <h2 class="form__title">Editar perfil</h2>
-            <input class="form__name" type="text" placeholder="Nome">
-            <input class="form__info" type="text" placeholder="Sobre mim">
+            <input class="form__name" type="text" placeholder="Nome" value="Jacques Cousteau">
+            <input class="form__info" type="text" placeholder="Sobre mim" value="Explorador">
             <button class="button__save" type="submit">Salvar
             </button>
             <button class="button__close"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone em X que indica onde fecha a edição de perfil">
@@ -64,6 +62,13 @@
             <button class="button__exit"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone em X que indica onde fecha a edição de perfil">
             </button>
         </form>
+    </div>
+    <div class="popup button">
+        <h2 class="popup__title"></h2>
+        <img class="popup__image">
+        <button class="button__close" id="popup__button">
+            <img src="images/buttonclose.svg" alt="ícone de fechar">
+        </button>
     </div>
     <script src="./scripts/script.js"></script>
 </body>

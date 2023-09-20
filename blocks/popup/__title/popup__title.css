@@ -1,0 +1,9 @@
+.popup__title {
+    position: relative;
+    top: 10px; 
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    margin-left: 0;
+  }
