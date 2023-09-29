@@ -19,3 +19,21 @@
         height: 46px;
     }
 }
+
+.button__create-off {
+    align-self: center;
+    width: 358px;
+    height: 50px;
+    margin-top: 46px;
+    margin-bottom: 36px;
+    background-color: #ffffff;
+    color: rgba(0,0,0,0.2);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 900px) {
+    .button__create-off {
+        width: 238px;
+        height: 46px;
+    }
+}

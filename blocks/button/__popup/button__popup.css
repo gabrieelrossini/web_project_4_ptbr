@@ -4,8 +4,9 @@
     height: 40px;
     border: none;
     position: relative;
-    top: -230px;
     background-color: transparent;
+    left: 420px;
+    bottom: 800px;
 }
 
 .button__popup:hover {

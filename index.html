@@ -44,8 +44,8 @@
     <div class="form">
         <form class="form__container button">
             <h2 class="form__title">Editar perfil</h2>
-            <input class="form__name" type="text" placeholder="Nome" value="Jacques Cousteau">
-            <input class="form__info" type="text" placeholder="Sobre mim" value="Explorador">
+            <input class="form__name" type="text" placeholder="Nome" value="Jacques Cousteau" minlength="2" maxlenght="40" required>
+            <input class="form__info" type="text" placeholder="Sobre mim" value="Explorador" minlength="2" maxlenght="200" required>
             <button class="button__save" type="submit">Salvar
             </button>
             <button class="button__close"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone de fechar">
@@ -55,8 +55,8 @@
     <div class="create">
         <form class="create__container button">
             <h2 class="create__title">Novo local</h2>
-            <input class="create__name" type="text" placeholder="Título">
-            <input class="create__info" type="url" placeholder="Link de imagem">
+            <input class="create__name" type="text" placeholder="Título" minlength="2" maxlenght="30" required>
+            <input class="create__info" type="url" placeholder="Link de imagem" required>
             <button class="button__create" type="submit">Criar
             </button>
             <button class="button__exit"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone de fechar">
@@ -64,8 +64,8 @@
         </form>
     </div>
     <div class="popup button">
-        <h2 class="popup__title"></h2>
         <img class="popup__image">
+        <h2 class="popup__title"></h2>
         <button class="button__popup">
             <img src="images/buttonclose.svg" alt="ícone de fechar">
         </button>

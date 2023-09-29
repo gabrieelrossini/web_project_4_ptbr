@@ -7,6 +7,7 @@
     margin-bottom: 36px;
     color: #ffffff;
     background-color: #000000;
+    border: none;
 }
 
 .button__save:hover {
@@ -15,6 +16,24 @@
 
 @media screen and (max-width: 900px) {
     .button__save {
+        width: 238px;
+        height: 46px;
+    }
+}
+
+.button__save-off {
+    align-self: center;
+    width: 358px;
+    height: 50px;
+    margin-top: 46px;
+    margin-bottom: 36px;
+    background-color: #ffffff;
+    color: rgba(0,0,0,0.2);
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 900px) {
+    .button__save-off {
         width: 238px;
         height: 46px;
     }
