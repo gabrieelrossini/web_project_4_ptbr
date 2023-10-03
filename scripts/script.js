@@ -1,26 +1,18 @@
-//seletores botão edit
-
+// Seletores botão edit
 const editButton = document.querySelector(".button__edit");
 const form = document.querySelector(".form");
-const formActive = document.querySelector(".form-active");
 
-//efeito de click botão edit
-
-editButton.addEventListener("click", function () {
-  form.classList.toggle("form-active");
-  form.classList.toggle("form");
-});
-
-//seletores botão save
-
+// Seletores botão save
 const saveButton = document.querySelector(".button__save");
 const nameForm = document.querySelector(".form__name");
 const infoForm = document.querySelector(".form__info");
 const nameData = document.querySelector(".data__name");
 const infoData = document.querySelector(".data__info");
 
-//função de validação botão save
+// Checando se a classe "form-active" está presente
+const formActive = document.querySelector(".form-active");
 
+// Função de validação botão save
 function validateFields() {
   const isNameValid = nameForm.checkValidity();
   const isInfoValid = infoForm.checkValidity();
@@ -31,11 +23,12 @@ function validateFields() {
   );
 }
 
-nameForm.addEventListener("input", validateFields);
-infoForm.addEventListener("input", validateFields);
+// Efeito de clique no botão edit
+editButton.addEventListener("click", function () {
+  form.classList.add("form-active");
+});
 
-//efeito de click botão save
-
+// Efeito de clique no botão save
 saveButton.addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -44,20 +37,37 @@ saveButton.addEventListener("click", function (event) {
     const newInfo = infoForm.value;
     nameData.textContent = newName;
     infoData.textContent = newInfo;
-    form.classList.toggle("form-active");
-    form.classList.toggle("form");
+    form.classList.remove("form-active");
   }
 });
 
-//botão close ativo
-
+// Efeito de clique no botão close
 const closeButton = document.querySelector(".button__close");
 
 closeButton.addEventListener("click", function () {
   event.preventDefault();
-  form.classList.toggle("form-active");
-  form.classList.toggle("form");
+  form.classList.remove("form-active");
 });
+
+// Manipulador de eventos de teclado
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    // Fechar o form
+    if (form.classList.contains("form-active")) {
+      form.classList.remove("form-active");
+    }
+
+    // Fechar o create
+    if (create.classList.contains("create-active")) {
+      create.classList.remove("create-active");
+      create.classList.add("create");
+    }
+  }
+});
+
+// Manipuladores de eventos de input
+nameForm.addEventListener("input", validateFields);
+infoForm.addEventListener("input", validateFields);
 
 //template cards
 

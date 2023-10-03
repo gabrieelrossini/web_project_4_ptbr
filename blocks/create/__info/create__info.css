@@ -10,3 +10,7 @@
         width: 238px;
     }   
 }
+
+.create__info:invalid {
+    border-bottom-color: #FF0000;
+}

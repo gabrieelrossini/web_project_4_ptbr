@@ -11,3 +11,7 @@
         width: 238px;
     }   
 }
+
+.form__name:invalid {
+    border-bottom-color: #FF0000;
+}

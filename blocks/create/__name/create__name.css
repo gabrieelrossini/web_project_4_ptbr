@@ -11,3 +11,7 @@
         width: 238px;
     }   
 }
+
+.create__name:invalid {
+    border-bottom-color: #FF0000;
+}
