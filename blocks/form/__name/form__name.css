@@ -15,3 +15,8 @@
 .form__name:invalid {
     border-bottom-color: #FF0000;
 }
+
+.form__name:invalid::after {
+    color: #FF0000;
+    font-size: 12px;
+}

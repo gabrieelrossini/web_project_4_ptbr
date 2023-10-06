@@ -4,24 +4,10 @@ const form = document.querySelector(".form");
 
 // Seletores botão save
 const saveButton = document.querySelector(".button__save");
-const nameForm = document.querySelector(".form__name");
-const infoForm = document.querySelector(".form__info");
+const nameForm = form.querySelector(".form__name");
+const infoForm = form.querySelector(".form__info");
 const nameData = document.querySelector(".data__name");
 const infoData = document.querySelector(".data__info");
-
-// Checando se a classe "form-active" está presente
-const formActive = document.querySelector(".form-active");
-
-// Função de validação botão save
-function validateFields() {
-  const isNameValid = nameForm.checkValidity();
-  const isInfoValid = infoForm.checkValidity();
-
-  saveButton.classList.toggle(
-    "button__save-off",
-    !(isNameValid && isInfoValid)
-  );
-}
 
 // Efeito de clique no botão edit
 editButton.addEventListener("click", function () {
@@ -41,6 +27,7 @@ saveButton.addEventListener("click", function (event) {
   }
 });
 
+
 // Efeito de clique no botão close
 const closeButton = document.querySelector(".button__close");
 
@@ -48,26 +35,6 @@ closeButton.addEventListener("click", function () {
   event.preventDefault();
   form.classList.remove("form-active");
 });
-
-// Manipulador de eventos de teclado
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    // Fechar o form
-    if (form.classList.contains("form-active")) {
-      form.classList.remove("form-active");
-    }
-
-    // Fechar o create
-    if (create.classList.contains("create-active")) {
-      create.classList.remove("create-active");
-      create.classList.add("create");
-    }
-  }
-});
-
-// Manipuladores de eventos de input
-nameForm.addEventListener("input", validateFields);
-infoForm.addEventListener("input", validateFields);
 
 //template cards
 
@@ -146,13 +113,52 @@ cardsData.forEach((data) => {
   cardContainer.appendChild(card);
 });
 
-//seletores botão add
+// Seletor popup
+const popup = document.querySelector(".popup");
 
+// Função de clique na imagem
+function addClickEventToImage(card) {
+  const image = card.querySelector(".card__image");
+  image.addEventListener("click", handleImageClick);
+}
+
+function handleImageClick(e) {
+  const image = e.currentTarget;
+  const src = image.src;
+  const imageTitle = image.alt;
+  openPopup(src, imageTitle);
+}
+
+// Função para abrir e fechar o popup
+function openPopup(src, imageTitle) {
+  const popup = document.querySelector(".popup");
+  const popupImage = popup.querySelector(".popup__image");
+  const popupTitle = popup.querySelector(".popup__title");
+  const popupButton = document.querySelector(".button__popup");
+
+  // Verifique se o popup já está aberto
+  const isOpen = popup.classList.contains("popup-active");
+
+  popupImage.src = src;
+  popupTitle.textContent = imageTitle;
+
+  if (isOpen) {
+    popup.classList.remove("popup-active");
+  } else {
+    popup.classList.add("popup-active");
+
+    // Adicionando tratamento de evento para o botão quando o popup é aberto
+    popupButton.addEventListener("click", () => {
+      popup.classList.remove("popup-active");
+    });
+  }
+}
+
+//seletores botão add
 const addButton = document.querySelector(".button__add");
 const create = document.querySelector(".create");
 
 //efeito de click botão add
-
 addButton.addEventListener("click", function () {
   create.classList.toggle("create-active");
   create.classList.toggle("create");
@@ -162,21 +168,6 @@ addButton.addEventListener("click", function () {
 const createButton = document.querySelector(".button__create");
 const nameCreate = document.querySelector(".create__name");
 const infoCreate = document.querySelector(".create__info");
-
-// Função de validação dos campos
-function validateCreateFields() {
-  const isNameValid = nameCreate.checkValidity();
-  const isInfoValid = infoCreate.checkValidity();
-
-  createButton.classList.toggle(
-    "button__create-off",
-    !(isNameValid && isInfoValid)
-  );
-}
-
-// Evento de input nos campos "Título" e "URL da imagem"
-nameCreate.addEventListener("input", validateCreateFields);
-infoCreate.addEventListener("input", validateCreateFields);
 
 // Evento de clique do botão "Create"
 createButton.addEventListener("click", function (event) {
@@ -220,43 +211,35 @@ createButton.addEventListener("click", function (event) {
   create.classList.toggle("create");
 });
 
-// Função de clique na imagem
-function addClickEventToImage(card) {
-  const image = card.querySelector(".card__image");
-  image.addEventListener("click", handleImageClick);
-}
-
-function handleImageClick(e) {
-  const image = e.currentTarget;
-  const src = image.src;
-  const imageTitle = image.alt;
-  openPopup(src, imageTitle);
-}
-
-// Função para abrir popup
-function openPopup(src, imageTitle) {
-  const popup = document.querySelector(".popup");
-  const closeBtn = document.querySelector(".button__popup");
-
-  closeBtn.addEventListener("click", () => {
-    popup.classList.remove("popup-active");
-  });
-
-  const popupImage = popup.querySelector(".popup__image");
-  const popupTitle = popup.querySelector(".popup__title");
-
-  popupImage.src = src;
-  popupTitle.textContent = imageTitle;
-
-  popup.classList.add("popup-active");
-}
-
 //botão exit ativo
-
 const exitButton = document.querySelector(".button__exit");
 
 exitButton.addEventListener("click", function () {
   event.preventDefault();
-  create.classList.toggle("create-active");
-  create.classList.toggle("create");
+  create.classList.remove("create-active");
+  create.classList.add("create");
+});
+
+// Manipulador de eventos de teclado
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    // Fechar o form
+    if (form.classList.contains("form-active")) {
+      event.preventDefault();
+      form.classList.remove("form-active");
+    }
+
+    // Fechar o create
+    if (create.classList.contains("create-active")) {
+      event.preventDefault();
+      create.classList.remove("create-active");
+      create.classList.add("create");
+    }
+
+    // Fechar o popup
+    if (popup.classList.contains("popup-active")) {
+      event.preventDefault();
+      popup.classList.remove("popup-active");
+    }
+  }
 });

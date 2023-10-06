@@ -41,26 +41,24 @@
     <footer class="footer">
         <p class="footer__text">&copy; 2023 Around The U.S.</p>
     </footer>
-    <div class="form">
-        <form class="form__container button">
+    <form class="form" novalidate>
+        <div class="form__container button">
             <h2 class="form__title">Editar perfil</h2>
-            <input class="form__name" type="text" placeholder="Nome" value="Jacques Cousteau" minlength="2" maxlenght="40" required>
-            <input class="form__info" type="text" placeholder="Sobre mim" value="Explorador" minlength="2" maxlenght="200" required>
-            <button class="button__save" type="submit">Salvar
-            </button>
-            <button class="button__close"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone de fechar">
-            </button>
-        </form>
-    </div>
-    <div class="create">
-        <form class="create__container button">
+            <input class="form__name" id="form__name" type="text" placeholder="Nome" value="Jacques Cousteau" minlength="2" maxlength="40" required>
+            <input class="form__info" id="form__info" type="text" placeholder="Sobre mim" value="Explorador" minlength="2" maxlength="200" required>
+            <button class="button__save" type="submit">Salvar</button>
+            <button class="button__close"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone de fechar"></button>
+        </div>
+    </form>
+    <form class="create" novalidate>
+        <div class="create__container button">
             <h2 class="create__title">Novo local</h2>
-            <input class="create__name" type="text" placeholder="Título" minlength="2" maxlength="30" required>
-            <input class="create__info" type="url" placeholder="Link de imagem" required>
+            <input class="create__name" id="create__name" type="text" placeholder="Título" minlength="2" maxlength="30" required>
+            <input class="create__info" id="create__info" type="url" placeholder="Link de imagem" required>
             <button class="button__create" type="submit">Criar</button>
             <button class="button__exit"><img class="button__close-img" src="images/buttonclose.svg" alt="ícone de fechar"></button>
-        </form>
-    </div>
+        </div>
+    </form>
     <div class="popup button">
         <img class="popup__image">
         <h2 class="popup__title"></h2>
@@ -69,5 +67,6 @@
         </button>
     </div>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 </html>
