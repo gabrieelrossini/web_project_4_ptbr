@@ -3,6 +3,8 @@
     align-self: center;
     border: none;
     border-bottom: 1px solid #80808087;
+    margin-top: 30px;
+    padding: 0;
 }
 
 @media screen and (max-width: 900px) {
@@ -13,9 +15,4 @@
 
 .create__info:invalid {
     border-bottom-color: #FF0000;
-}
-
-.create__info:invalid::after {
-    color: #FF0000;
-    font-size: 12px;
 }

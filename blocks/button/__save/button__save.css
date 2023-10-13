@@ -2,12 +2,11 @@
     cursor: pointer;
     align-self: center;
     width: 358px;
-    height: 50px;
-    margin-top: 46px;
-    margin-bottom: 36px;
+    min-height: 50px;
     color: #ffffff;
     background-color: #000000;
-    border: none;
+    top: 250px;
+    position: absolute;
 }
 
 .button__save:hover {
@@ -25,8 +24,6 @@
     align-self: center;
     width: 358px;
     height: 50px;
-    margin-top: 46px;
-    margin-bottom: 36px;
     background-color: #ffffff;
     color: rgba(0,0,0,0.2);
     border: 2px solid rgba(0,0,0,0.1);

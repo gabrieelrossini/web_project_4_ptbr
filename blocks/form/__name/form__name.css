@@ -1,7 +1,6 @@
 .form__name {
     width: 358px;
     align-self: center;
-    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid #80808087;
 }
@@ -14,9 +13,4 @@
 
 .form__name:invalid {
     border-bottom-color: #FF0000;
-}
-
-.form__name:invalid::after {
-    color: #FF0000;
-    font-size: 12px;
 }

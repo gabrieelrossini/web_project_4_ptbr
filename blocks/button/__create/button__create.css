@@ -2,11 +2,11 @@
     cursor: pointer;
     align-self: center;
     width: 358px;
-    height: 50px;
-    margin-top: 46px;
-    margin-bottom: 36px;
+    min-height: 50px;
     color: #ffffff;
     background-color: #000000;
+    top: 250px;
+    position: absolute;
 }
 
 .button__create:hover {
@@ -23,9 +23,7 @@
 .button__create-off {
     align-self: center;
     width: 358px;
-    height: 50px;
-    margin-top: 46px;
-    margin-bottom: 36px;
+    min-height: 50px;
     background-color: #ffffff;
     color: rgba(0,0,0,0.2);
     border: 2px solid rgba(0,0,0,0.1);
