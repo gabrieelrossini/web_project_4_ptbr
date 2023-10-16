@@ -5,8 +5,8 @@
     border: none;
     position: relative;
     background-color: transparent;
-    left: 420px;
-    bottom: 800px;
+    right: -420px;
+    bottom: 480px;
 }
 
 .button__popup:hover {
