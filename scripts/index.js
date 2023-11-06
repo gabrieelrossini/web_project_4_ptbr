@@ -1,3 +1,6 @@
+import {cardsData} from "./cardsData.js";
+import {handleKeydownEvent} from "./utils.js";
+
 // Seletores botão edit
 const editButton = document.querySelector(".button__edit");
 const form = document.querySelector(".form");
@@ -36,38 +39,7 @@ closeButton.addEventListener("click", function () {
 // Template de cards
 const cardTemplate = document.querySelector("#card-template");
 const cardContainer = document.querySelector(".cards");
-const cardsData = [
-  {
-    src: "./images/yosemite.jpg",
-    alt: "Vale de Yosemite",
-    title: "Vale de Yosemite",
-  },
-  {
-    src: "./images/louise.jpg",
-    alt: "Lago Louise",
-    title: "Lago Louise",
-  },
-  {
-    src: "./images/montanhas.jpg",
-    alt: "Montanhas Carecas",
-    title: "Montanhas Carecas",
-  },
-  {
-    src: "./images/latemar.jpg",
-    alt: "Latemar",
-    title: "Latemar",
-  },
-  {
-    src: "./images/vanoise.jpg",
-    alt: "Parque Nacional de Vanoise",
-    title: "Vanoise National Park",
-  },
-  {
-    src: "./images/braies.jpg",
-    alt: "Lago di Braies",
-    title: "Lago di Braies",
-  },
-];
+
 
 function addHeartEvent(card) {
   const buttonHeart = card.querySelector(".button__heart");
@@ -209,29 +181,7 @@ exitButton.addEventListener("click", function () {
   create.classList.add("create");
 });
 
-// Manipulador de eventos de teclado
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    // Fechar o form
-    if (form.classList.contains("form-active")) {
-      event.preventDefault();
-      form.classList.remove("form-active");
-    }
 
-    // Fechar o create
-    if (create.classList.contains("create-active")) {
-      event.preventDefault();
-      create.classList.remove("create-active");
-      create.classList.add("create");
-    }
-
-    // Fechar o popup
-    if (popup.classList.contains("popup-active")) {
-      event.preventDefault();
-      popup.classList.remove("popup-active");
-    }
-  }
-});
 
 // Função de validação botão save
 function validateSaveFields() {
@@ -294,3 +244,9 @@ infoCreate.addEventListener("input", validateCreateFields);
 
 // Ative a validação
 enableValidation(config);
+
+// Ouvinte do evento de teclado
+
+document.addEventListener("keydown", (event) => {
+  handleKeydownEvent(event, form, create, popup);
+});
