@@ -1,0 +1,13 @@
+.data__info {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 16px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .data__info {
+        font-size: 14px;
+        align-self: center;
+    }
+}

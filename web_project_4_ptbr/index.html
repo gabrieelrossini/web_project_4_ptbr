@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="pages/index.css" />
+    <title>Around the U.S.</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <img
+        class="header__img"
+        src="./images/img-header.svg"
+        alt="imagem que diz Around the U.S."
+      />
+      <div class="header__line"></div>
+    </header>
+    <main id="main">
+      <section class="profile button">
+        <img
+          class="profile__img"
+          src="./images/img-profile.jpg"
+          alt="um senhor de idade, com óculos e vestido de uma touca vermelha, sorrindo"
+        />
+        <div class="data">
+          <p class="data__name">Jacques Cousteau</p>
+          <p class="data__info">Explorador</p>
+        </div>
+        <button class="button__edit">
+          <img
+            src="./images/img-edit.svg"
+            alt="uma caneta que indica o local onde o usuário pode editar o perfil"
+          />
+        </button>
+        <button class="button__add">
+          <img
+            class="button__cross"
+            src="./images/img-add.svg"
+            alt="botão com uma cruz para indicar a possibilidade de adicionar um perfil"
+          />
+        </button>
+      </section>
+      <section class="cards">
+        <template id="card-template">
+          <div class="card">
+            <img class="card__image" src=" " alt=" " />
+            <div class="card__info button">
+              <h2 class="card__title"></h2>
+              <button class="button__heart"></button>
+            </div>
+          </div>
+        </template>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__text">&copy; 2023 Around The U.S.</p>
+    </footer>
+    <form class="form" novalidate>
+      <div class="form__container button">
+        <h2 class="form__title">Editar perfil</h2>
+        <input
+          class="form__name"
+          id="form__name"
+          type="text"
+          placeholder="Nome"
+          value="Jacques Cousteau"
+          minlength="2"
+          maxlength="40"
+          required
+        />
+        <span class="span" id="form__name-error"></span>
+        <input
+          class="form__info"
+          id="form__info"
+          type="text"
+          placeholder="Sobre mim"
+          value="Explorador"
+          minlength="2"
+          maxlength="200"
+          required
+        />
+        <span class="span" id="form__info-error"></span>
+        <button class="button__save" type="submit">Salvar</button>
+        <button class="button__close">
+          <img
+            class="button__close-img"
+            src="images/buttonclose.svg"
+            alt="ícone de fechar"
+          />
+        </button>
+      </div>
+    </form>
+    <form class="create" novalidate>
+      <div class="create__container button">
+        <h2 class="create__title">Novo local</h2>
+        <input
+          class="create__name"
+          id="create__name"
+          type="text"
+          placeholder="Título"
+          minlength="2"
+          maxlength="30"
+          required
+        />
+        <span class="span" id="create__name-error"></span>
+        <input
+          class="create__info"
+          id="create__info"
+          type="url"
+          placeholder="Link de imagem"
+          required
+        />
+        <span class="span" id="create__info-error"></span>
+        <button class="button__create" type="submit">Criar</button>
+        <button class="button__exit">
+          <img
+            class="button__close-img"
+            src="images/buttonclose.svg"
+            alt="ícone de fechar"
+          />
+        </button>
+      </div>
+    </form>
+    <div class="popup button">
+      <button class="button__popup">
+        <img src="images/buttonclose.svg" alt="ícone de fechar" />
+      </button>
+      <img class="popup__image" />
+      <h2 class="popup__title"></h2>
+    </div>
+    <script type="module" src="./scripts/Card.js"></script>
+    <script type="module" src="./scripts/FormValidator.js"></script>
+    <script type="module" src="./scripts/utils.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>

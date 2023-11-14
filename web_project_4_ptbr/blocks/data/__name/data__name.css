@@ -1,0 +1,24 @@
+.data__name {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 42px;
+    margin: 22px 0 0;
+}
+
+@media screen and (max-width: 900px) {
+    .data__name {
+        font-size: 38px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .data__name {
+        font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .data__name {
+        font-size: 22px;
+    }
+}

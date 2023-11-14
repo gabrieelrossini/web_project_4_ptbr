@@ -1,0 +1,17 @@
+.create__container {
+    position: relative;
+    background-color: #ffffff;
+    width: 430px;
+    height: 330px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow:0px 0px 25px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 900px) {
+    .create__container {
+        width: 282px;
+        height: 322px;
+    }
+}

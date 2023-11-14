@@ -1,0 +1,26 @@
+.button__close {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    position: absolute;
+    top: -45px;
+    right: -45px;
+    background-color: transparent;
+}
+
+.button__close:hover {
+    opacity: 0.6;
+}
+
+@media screen and (max-width: 900px) {
+    .button__close {
+        width: 26px;
+        height: 26px;
+        right: 0px;
+    }   
+}
+
+.button__close-img {
+    width: 100%;
+}

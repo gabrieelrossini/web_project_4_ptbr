@@ -1,0 +1,124 @@
+/** 
+* Vendor
+*/
+
+@import url(../vendor/normalize.css);
+
+/**
+* Fonts
+*/
+
+@import url(../vendor/fonts/inter.css);
+
+/** 
+* Root
+*/
+
+@import url(../blocks/root/root.css);
+
+/** 
+* Definições page 
+*/
+
+ @import url(../blocks/page/page.css);
+
+/** 
+* Definições header 
+*/
+
+ @import url(../blocks/header/header.css);
+ @import url(../blocks/header/__img/header__img.css);
+ @import url(../blocks/header/__line/header__line.css);
+
+/** 
+* Definições profile 
+*/
+
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/profile/__img/profile__img.css);
+
+/** 
+* Definições data
+*/
+
+ @import url(../blocks/data/data.css);
+ @import url(../blocks/data/__name/data__name.css);
+ @import url(../blocks/data/__info/data__info.css);
+
+/** 
+* Definições button 
+*/
+
+@import url(../blocks/button/__edit/button__edit.css);
+@import url(../blocks/button/__save/button__save.css);
+@import url(../blocks/button/__close/button__close.css);
+@import url(../blocks/button/__add/button__add.css);
+@import url(../blocks/button/__cross/button__cross.css);
+@import url(../blocks/button/__heart/button__heart.css);
+@import url(../blocks/button/__heart/button__heart-active.css);
+@import url(../blocks/button/__trash/button__trash.css);
+@import url(../blocks/button/__create/button__create.css);
+@import url(../blocks/button/__exit/button__exit.css);
+@import url(../blocks/button/__popup/button__popup.css);
+
+/** 
+* Definições cards
+*/
+
+@import url(../blocks/cards/cards.css);
+
+/** 
+* Definições card
+*/
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__info/card__info.css);
+@import url(../blocks/card/__title/card__title.css);
+
+/** 
+* Definições footer
+*/
+
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+
+/** 
+* Definições form
+*/
+
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__container/form__container.css);
+@import url(../blocks/form/__title/form__title.css);
+@import url(../blocks/form/__name/form__name.css);
+@import url(../blocks/form/__info/form__info.css);
+
+/**
+* Definições create
+*/
+
+@import url(../blocks/create/create.css);
+@import url(../blocks/create/__container/create__container.css);
+@import url(../blocks/create/__title/create__title.css);
+@import url(../blocks/create/__name/create__name.css);
+@import url(../blocks/create/__info/create__info.css);
+
+/**
+* Definições popup
+*/
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__image/popup__image.css);
+
+/**
+* Definições span
+*/
+
+@import url(../blocks/span/span.css);
+
+/**
+* Definições input-invalid
+*/
+
+@import url(../blocks/input-invalid/input-invalid.css);
