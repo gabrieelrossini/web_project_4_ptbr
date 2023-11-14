@@ -3,14 +3,12 @@
     align-self: center;
     border: none;
     border-bottom: 1px solid #80808087;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 900px) {
     .create__name {
         width: 238px;
     }   
-}
-
-.create__name:invalid {
-    border-bottom-color: #FF0000;
 }

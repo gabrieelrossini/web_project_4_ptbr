@@ -3,10 +3,10 @@
     width: 40px;
     height: 40px;
     border: none;
-    position: relative;
     background-color: transparent;
-    right: -420px;
-    bottom: 480px;
+    justify-self: end;
+    position: relative;
+    top: 50px;
 }
 
 .button__popup:hover {

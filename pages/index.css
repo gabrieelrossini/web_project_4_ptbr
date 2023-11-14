@@ -116,3 +116,9 @@
 */
 
 @import url(../blocks/span/span.css);
+
+/**
+* Definições input-invalid
+*/
+
+@import url(../blocks/input-invalid/input-invalid.css);

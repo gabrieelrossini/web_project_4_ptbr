@@ -5,14 +5,12 @@
     border-bottom: 1px solid #80808087;
     margin-top: 30px;
     padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 @media screen and (max-width: 900px) {
     .create__info {
         width: 238px;
     }   
-}
-
-.create__info:invalid {
-    border-bottom-color: #FF0000;
 }

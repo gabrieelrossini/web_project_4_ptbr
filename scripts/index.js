@@ -1,22 +1,21 @@
-import {cardsData} from "./cardsData.js";
-import {handleKeydownEvent} from "./utils.js";
+import { cardsData } from './cardsData.js';
+import { handleKeydownEvent, openPopup } from './utils.js';
+import Card from './Card.js'; // Importe a classe Card
+import FormValidator from './FormValidator.js';
 
-// Seletores botão edit
-const editButton = document.querySelector(".button__edit");
-const form = document.querySelector(".form");
-const saveButton = document.querySelector(".button__save");
-const nameForm = form.querySelector(".form__name");
-const infoForm = form.querySelector(".form__info");
-const nameData = document.querySelector(".data__name");
-const infoData = document.querySelector(".data__info");
+const editButton = document.querySelector('.button__edit');
+const form = document.querySelector('.form');
+const saveButton = document.querySelector('.button__save');
+const nameForm = form.querySelector('.form__name');
+const infoForm = form.querySelector('.form__info');
+const nameData = document.querySelector('.data__name');
+const infoData = document.querySelector('.data__info');
 
-// Efeito de clique no botão edit
-editButton.addEventListener("click", function () {
-  form.classList.add("form-active");
+editButton.addEventListener('click', function () {
+  form.classList.add('form-active');
 });
 
-// Efeito de clique no botão save
-saveButton.addEventListener("click", function (event) {
+saveButton.addEventListener('click', function (event) {
   event.preventDefault();
 
   if (nameForm.checkValidity() && infoForm.checkValidity()) {
@@ -24,63 +23,52 @@ saveButton.addEventListener("click", function (event) {
     const newInfo = infoForm.value;
     nameData.textContent = newName;
     infoData.textContent = newInfo;
-    form.classList.remove("form-active");
+    form.classList.remove('form-active');
   }
 });
 
-// Efeito de clique no botão close
-const closeButton = document.querySelector(".button__close");
+const closeButton = document.querySelector('.button__close');
 
-closeButton.addEventListener("click", function () {
+closeButton.addEventListener('click', function (event) {
   event.preventDefault();
-  form.classList.remove("form-active");
+  form.classList.remove('form-active');
 });
 
-// Template de cards
-const cardTemplate = document.querySelector("#card-template");
-const cardContainer = document.querySelector(".cards");
 
+const cardTemplate = document.querySelector('#card-template');
+const cardContainer = document.querySelector('.cards');
 
 function addHeartEvent(card) {
-  const buttonHeart = card.querySelector(".button__heart");
+  const buttonHeart = card.querySelector('.button__heart');
 
-  buttonHeart.addEventListener("click", () => {
-    buttonHeart.classList.toggle("button__heart-active");
+  buttonHeart.addEventListener('click', () => {
+    buttonHeart.classList.toggle('button__heart-active');
   });
 }
 
 cardsData.forEach((data) => {
-  const card = cardTemplate.content.cloneNode(true);
+  const cardInstance = new Card(data, '#card-template');
+  const cardElement = cardInstance.generateCard();
 
-  const image = card.querySelector(".card__image");
-  image.src = data.src;
-  image.alt = data.alt;
+  const buttonTrash = document.createElement('button');
+  buttonTrash.classList.add('button__trash');
+  cardElement.appendChild(buttonTrash);
 
-  image.addEventListener("click", handleImageClick);
-
-  const cardTitle = card.querySelector(".card__title");
-  cardTitle.textContent = data.title;
-
-  const buttonTrash = document.createElement("button");
-  buttonTrash.classList.add("button__trash");
-  card.querySelector(".card").appendChild(buttonTrash);
-
-  buttonTrash.addEventListener("click", () => {
-    buttonTrash.closest(".card").remove();
+  // Adicionar um evento de clique para o botão trash
+  buttonTrash.addEventListener('click', function () {
+    // Remove o card do DOM
+    cardContainer.removeChild(cardElement);
   });
 
-  addHeartEvent(card);
-
-  cardContainer.appendChild(card);
+  cardContainer.appendChild(cardElement);
+  addClickEventToImage(cardElement);
 });
 
-// Seletor popup
-const popup = document.querySelector(".popup");
+const popup = document.querySelector('.popup');
 
-// Função de clique na imagem
 function addClickEventToImage(card) {
-  const image = card.querySelector(".card__image");
-  image.addEventListener("click", handleImageClick);
+  const image = card.querySelector('.card__image');
+  image.addEventListener('click', handleImageClick);
 }
 
 function handleImageClick(e) {
@@ -90,163 +78,64 @@ function handleImageClick(e) {
   openPopup(src, imageTitle);
 }
 
-// Função para abrir e fechar o popup
-function openPopup(src, imageTitle) {
-  const popup = document.querySelector(".popup");
-  const popupImage = popup.querySelector(".popup__image");
-  const popupTitle = popup.querySelector(".popup__title");
-  const popupButton = document.querySelector(".button__popup");
+const addButton = document.querySelector('.button__add');
+const create = document.querySelector('.create');
 
-  // Verifique se o popup já está aberto
-  const isOpen = popup.classList.contains("popup-active");
-
-  popupImage.src = src;
-  popupTitle.textContent = imageTitle;
-
-  if (isOpen) {
-    popup.classList.remove("popup-active");
-  } else {
-    popup.classList.add("popup-active");
-
-    // Adicionando tratamento de evento para o botão quando o popup é aberto
-    popupButton.addEventListener("click", () => {
-      popup.classList.remove("popup-active");
-    });
-  }
-}
-
-// Seletores botão add
-const addButton = document.querySelector(".button__add");
-const create = document.querySelector(".create");
-
-// Efeito de click botão add
-addButton.addEventListener("click", function () {
-  create.classList.toggle("create-active");
-  create.classList.toggle("create");
+addButton.addEventListener('click', function () {
+  create.classList.toggle('create-active');
+  create.classList.toggle('create');
+  formCreateValidator.resetValidation();
 });
 
-// Seletores dos botões "Create"
-const createButton = document.querySelector(".button__create");
-const nameCreate = document.querySelector(".create__name");
-const infoCreate = document.querySelector(".create__info");
+const createButton = document.querySelector('.button__create');
+const nameCreate = document.querySelector('.create__name');
+const infoCreate = document.querySelector('.create__info');
 
-// Evento de clique do botão "Create"
-createButton.addEventListener("click", function (event) {
+createButton.addEventListener('click', function (event) {
   event.preventDefault();
 
-  // Verifica se os campos são válidos
   if (!nameCreate.checkValidity() || !infoCreate.checkValidity()) {
-    return; // Sai precocemente se os campos não forem válidos
+    return;
   }
 
-  // Criação do card
   const name = nameCreate.value;
   const imageSrc = infoCreate.value;
-  const card = cardTemplate.content.cloneNode(true);
+  const cardInstance = new Card({ title: name, src: imageSrc, alt: name }, '#card-template');
+  const cardElement = cardInstance.generateCard();
+  
+  cardContainer.appendChild(cardElement);
 
-  const title = card.querySelector(".card__title");
-  title.textContent = name;
+  nameCreate.value = '';
+  infoCreate.value = '';
 
-  const image = card.querySelector(".card__image");
-  image.src = imageSrc;
-  image.alt = name;
-
-  const buttonTrash = document.createElement("button");
-  buttonTrash.classList.add("button__trash");
-  card.querySelector(".card").appendChild(buttonTrash);
-
-  buttonTrash.addEventListener("click", () => {
-    buttonTrash.closest(".card").remove();
-  });
-
-  addHeartEvent(card); // Adiciona o evento de clique no coração
-
-  addClickEventToImage(card); // Adiciona o evento de clique na imagem
-
-  cardContainer.appendChild(card);
-
-  nameCreate.value = "";
-  infoCreate.value = "";
-
-  create.classList.toggle("create-active");
-  create.classList.toggle("create");
+  create.classList.toggle('create-active');
+  create.classList.toggle('create');
 });
 
-// Botão exit ativo
-const exitButton = document.querySelector(".button__exit");
+const exitButton = document.querySelector('.button__exit');
 
-exitButton.addEventListener("click", function () {
+exitButton.addEventListener('click', function () {
   event.preventDefault();
-  create.classList.remove("create-active");
-  create.classList.add("create");
+  create.classList.remove('create-active');
+  create.classList.add('create');
 });
 
-
-
-// Função de validação botão save
-function validateSaveFields() {
-  const isNameValid = nameForm.checkValidity();
-  const isInfoValid = infoForm.checkValidity();
-
-  saveButton.classList.toggle(
-    "button__save-off",
-    !(isNameValid && isInfoValid)
-  );
-}
-
-// Função de validação botão create
-function validateCreateFields() {
-  const isNameValid = nameCreate.checkValidity();
-  const isInfoValid = infoCreate.checkValidity();
-
-  createButton.classList.toggle(
-    "button__create-off",
-    !(isNameValid && isInfoValid)
-  );
-}
-
-// Valide todas as configurações
-function enableValidation(event) {
-  const forms = document.querySelectorAll(config.formSelector);
-
-  forms.forEach((form) => {
-    form.addEventListener("input", (event) => {
-      const inputElement = event.target;
-      const errorElement = inputElement.nextElementSibling;
-
-      if (inputElement.validity.valid) {
-        inputElement.classList.remove(config.inputErrorClass);
-        errorElement.textContent = "";
-        ativarButton();
-      } else {
-        inputElement.classList.add(config.inputErrorClass);
-        errorElement.textContent = inputElement.validationMessage;
-        desativarButton();
-      }
-    });
-  });
-}
-
-const config = {
-  formSelector: "form",
-  inputSelector: ".form__name, .form__info, .create__name, .create__info",
-  submitButtonSelector: ".button__save, .button__create",
-  inactiveButtonClass: "button__save-off, button__create-off",
-  inputErrorClass: "form__name-invalid",
-  errorSelector: ".span",
+const formValidatorConfig = {
+  formSelector: '.form, .create',
+  inputSelector: '.form__name, .form__info, .create__name, .create__info',
+  submitButtonSelector: '.button__save, .button__create',
+  inactiveButtonClass: 'button__save-off, button__create-off',
+  inputErrorClass: 'input-invalid',
+  errorSelector: '.span',
 };
 
-// Adicione validação aos campos existentes
-nameForm.addEventListener("input", validateSaveFields);
-infoForm.addEventListener("input", validateSaveFields);
-nameCreate.addEventListener("input", validateCreateFields);
-infoCreate.addEventListener("input", validateCreateFields);
+const formEditValidator = new FormValidator(formValidatorConfig, document.querySelector('.form'));
+formEditValidator.enableValidation();
 
-// Ative a validação
-enableValidation(config);
+const formCreateValidator = new FormValidator(formValidatorConfig, document.querySelector('.create'));
+formCreateValidator.enableValidation();
 
-// Ouvinte do evento de teclado
 
-document.addEventListener("keydown", (event) => {
+document.addEventListener('keydown', (event) => {
   handleKeydownEvent(event, form, create, popup);
 });
