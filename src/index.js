@@ -1,7 +1,9 @@
-import { cardsData } from './cardsData.js';
-import { handleKeydownEvent, openPopup } from './utils.js';
-import Card from './Card.js'; // Importe a classe Card
-import FormValidator from './FormValidator.js';
+import "./styles/index.css";
+
+import { cardsData } from './pages/cardsData.js';
+import { handleKeydownEvent, openPopup } from './pages/utils.js';
+import Card from './pages/Card.js'; // Importe a classe Card
+import FormValidator from './pages/FormValidator.js';
 
 const editButton = document.querySelector('.button__edit');
 const form = document.querySelector('.form');

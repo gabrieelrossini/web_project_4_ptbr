@@ -1,5 +1,5 @@
 .button__trash {
-    background-image: url("/images/trash.svg");
+    background-image: url("/src/images/trash.svg");
     cursor: pointer;
     border: none;
     width: 18px;

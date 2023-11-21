@@ -5,7 +5,7 @@
     border: none;
     background-color: #ffffff;
     margin-bottom: 30px;
-    background-image: url("/images/heart.svg");
+    background-image: url("/src/images/heart.svg");
 }
 
 .button__heart:hover {
