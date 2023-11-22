@@ -1,3 +1,18 @@
+// Importando constantes
+
+import {
+  form,
+  create,
+  popup,
+  editButton,
+  saveButton,
+  closeButton,
+  nameForm,
+  infoForm,
+  nameData,
+  infoData
+} from './constants.js'
+
 // Manipulador de eventos de teclado
 function handleKeydownEvent(event, form, create, popup) {
   // Verifica se a tecla pressionada é "Escape"
@@ -48,6 +63,49 @@ function openPopup(src, imageTitle) {
       popup.classList.remove("popup-active");
     });
   }
+}
+
+// Adicionando um evento de escuta ao teclado para manipulação de eventos
+
+document.addEventListener('keydown', (event) => {
+  handleKeydownEvent(event, form, create, popup);
+});
+
+// Adicionando evento de clique ao botão de edição para exibir o formulário de edição
+
+editButton.addEventListener('click', function () {
+  form.classList.add('form-active');
+});
+
+// Adicionando evento de clique ao botão de salvamento no formulário de edição
+
+saveButton.addEventListener('click', function (event) {
+  event.preventDefault();
+
+  if (nameForm.checkValidity() && infoForm.checkValidity()) {
+    const newName = nameForm.value;
+    const newInfo = infoForm.value;
+    nameData.textContent = newName;
+    infoData.textContent = newInfo;
+    form.classList.remove('form-active');
+  }
+});
+
+// Adicionando evento de clique ao botão de fechar no formulário de edição
+
+closeButton.addEventListener('click', function (event) {
+  event.preventDefault();
+  form.classList.remove('form-active');
+});
+
+// Adicionando evento de clique ao botão like
+
+function addHeartEvent(card) {
+  const buttonHeart = card.querySelector('.button__heart');
+
+  buttonHeart.addEventListener('click', () => {
+    buttonHeart.classList.toggle('button__heart-active');
+  });
 }
 
 // Exporta as funções handleKeydownEvent e openPopup para uso externo

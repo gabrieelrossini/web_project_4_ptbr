@@ -1,13 +1,31 @@
 // Importando estilos CSS
 import "./styles/index.css";
 
-// Importando os cards iniciais
+// Importando constantes
 
-import { cardsData } from './utils/constants.js';
+import {
+  cardsData,
+  editButton,
+  form,
+  saveButton,
+  nameForm,
+  infoForm,
+  nameData,
+  infoData,
+  closeButton,
+  cardTemplate,
+  cardContainer,
+  popup,
+  addButton,
+  create,
+  createButton,
+  nameCreate,
+  infoCreate,
+  exitButton } from './utils/constants.js';
 
 // Importando funções e classes de utilidade
 
-import { handleKeydownEvent, openPopup } from './utils/utils.js';
+import { handleKeydownEvent, openPopup } from './utils/Popup.js';
 
 // Importando a classe Card
 
@@ -17,62 +35,7 @@ import Card from './components/Card.js';
 
 import FormValidator from './components/FormValidator.js';
 
-// Selecionando elementos do DOM
 
-const editButton = document.querySelector('.button__edit');
-const form = document.querySelector('.form');
-const saveButton = document.querySelector('.button__save');
-const nameForm = form.querySelector('.form__name');
-const infoForm = form.querySelector('.form__info');
-const nameData = document.querySelector('.data__name');
-const infoData = document.querySelector('.data__info');
-const closeButton = document.querySelector('.button__close');
-const cardTemplate = document.querySelector('#card-template');
-const cardContainer = document.querySelector('.cards');
-const popup = document.querySelector('.popup');
-const addButton = document.querySelector('.button__add');
-const create = document.querySelector('.create');
-const createButton = document.querySelector('.button__create');
-const nameCreate = document.querySelector('.create__name');
-const infoCreate = document.querySelector('.create__info');
-const exitButton = document.querySelector('.button__exit');
-
-// Adicionando evento de clique ao botão de edição para exibir o formulário de edição
-
-editButton.addEventListener('click', function () {
-  form.classList.add('form-active');
-});
-
-// Adicionando evento de clique ao botão de salvamento no formulário de edição
-
-saveButton.addEventListener('click', function (event) {
-  event.preventDefault();
-
-  if (nameForm.checkValidity() && infoForm.checkValidity()) {
-    const newName = nameForm.value;
-    const newInfo = infoForm.value;
-    nameData.textContent = newName;
-    infoData.textContent = newInfo;
-    form.classList.remove('form-active');
-  }
-});
-
-// Adicionando evento de clique ao botão de fechar no formulário de edição
-
-closeButton.addEventListener('click', function (event) {
-  event.preventDefault();
-  form.classList.remove('form-active');
-});
-
-// Adicionando evento de clique ao botão like
-
-function addHeartEvent(card) {
-  const buttonHeart = card.querySelector('.button__heart');
-
-  buttonHeart.addEventListener('click', () => {
-    buttonHeart.classList.toggle('button__heart-active');
-  });
-}
 
 // Iterando sobre os dados dos cards e gerando elementos HTML para cada um
 
@@ -166,8 +129,3 @@ formEditValidator.enableValidation();
 const formCreateValidator = new FormValidator(formValidatorConfig, document.querySelector('.create'));
 formCreateValidator.enableValidation();
 
-// Adicionando um evento de escuta ao teclado para manipulação de eventos
-
-document.addEventListener('keydown', (event) => {
-  handleKeydownEvent(event, form, create, popup);
-});
