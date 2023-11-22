@@ -1,26 +1,27 @@
 // Manipulador de eventos de teclado
 function handleKeydownEvent(event, form, create, popup) {
+  // Verifica se a tecla pressionada é "Escape"
   if (event.key === "Escape") {
-    // Fechar o form
+    // Fecha o formulário se estiver aberto
     if (form.classList.contains("form-active")) {
       event.preventDefault();
       form.classList.remove("form-active");
     }
   
-    // Fechar o create
+    // Fecha o elemento "create" se estiver aberto
     if (create.classList.contains("create-active")) {
       event.preventDefault();
       create.classList.remove("create-active");
       create.classList.add("create");
     }
   
-    // Fechar o popup
+    // Fecha o popup se estiver aberto
     if (popup.classList.contains("popup-active")) {
       event.preventDefault();
       popup.classList.remove("popup-active");
     }
   }
-};
+}
 
 // Função para abrir e fechar o popup
 function openPopup(src, imageTitle) {
@@ -29,23 +30,25 @@ function openPopup(src, imageTitle) {
   const popupTitle = popup.querySelector(".popup__title");
   const popupButton = document.querySelector(".button__popup");
   
-  // Verifique se o popup já está aberto
+  // Verifica se o popup já está aberto
   const isOpen = popup.classList.contains("popup-active");
   
   popupImage.src = src;
   popupTitle.textContent = imageTitle;
   
   if (isOpen) {
+    // Fecha o popup se estiver aberto
     popup.classList.remove("popup-active");
   } else {
+    // Abre o popup se estiver fechado
     popup.classList.add("popup-active");
   
-    // Adicionando tratamento de evento para o botão quando o popup é aberto
+    // Adiciona um evento de clique ao botão para fechar o popup quando aberto
     popupButton.addEventListener("click", () => {
       popup.classList.remove("popup-active");
     });
   }
 }
 
-
-export {handleKeydownEvent, openPopup};
+// Exporta as funções handleKeydownEvent e openPopup para uso externo
+export { handleKeydownEvent, openPopup };

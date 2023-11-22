@@ -1,9 +1,23 @@
+// Importando estilos CSS
 import "./styles/index.css";
 
-import { cardsData } from './pages/cardsData.js';
-import { handleKeydownEvent, openPopup } from './pages/utils.js';
-import Card from './pages/Card.js'; // Importe a classe Card
-import FormValidator from './pages/FormValidator.js';
+// Importando os cards iniciais
+
+import { cardsData } from './utils/constants.js';
+
+// Importando funções e classes de utilidade
+
+import { handleKeydownEvent, openPopup } from './utils/utils.js';
+
+// Importando a classe Card
+
+import Card from './components/Card.js';
+
+// Importando as regras de validação de formulário
+
+import FormValidator from './components/FormValidator.js';
+
+// Selecionando elementos do DOM
 
 const editButton = document.querySelector('.button__edit');
 const form = document.querySelector('.form');
@@ -12,10 +26,24 @@ const nameForm = form.querySelector('.form__name');
 const infoForm = form.querySelector('.form__info');
 const nameData = document.querySelector('.data__name');
 const infoData = document.querySelector('.data__info');
+const closeButton = document.querySelector('.button__close');
+const cardTemplate = document.querySelector('#card-template');
+const cardContainer = document.querySelector('.cards');
+const popup = document.querySelector('.popup');
+const addButton = document.querySelector('.button__add');
+const create = document.querySelector('.create');
+const createButton = document.querySelector('.button__create');
+const nameCreate = document.querySelector('.create__name');
+const infoCreate = document.querySelector('.create__info');
+const exitButton = document.querySelector('.button__exit');
+
+// Adicionando evento de clique ao botão de edição para exibir o formulário de edição
 
 editButton.addEventListener('click', function () {
   form.classList.add('form-active');
 });
+
+// Adicionando evento de clique ao botão de salvamento no formulário de edição
 
 saveButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -29,16 +57,14 @@ saveButton.addEventListener('click', function (event) {
   }
 });
 
-const closeButton = document.querySelector('.button__close');
+// Adicionando evento de clique ao botão de fechar no formulário de edição
 
 closeButton.addEventListener('click', function (event) {
   event.preventDefault();
   form.classList.remove('form-active');
 });
 
-
-const cardTemplate = document.querySelector('#card-template');
-const cardContainer = document.querySelector('.cards');
+// Adicionando evento de clique ao botão like
 
 function addHeartEvent(card) {
   const buttonHeart = card.querySelector('.button__heart');
@@ -47,6 +73,8 @@ function addHeartEvent(card) {
     buttonHeart.classList.toggle('button__heart-active');
   });
 }
+
+// Iterando sobre os dados dos cards e gerando elementos HTML para cada um
 
 cardsData.forEach((data) => {
   const cardInstance = new Card(data, '#card-template');
@@ -66,7 +94,7 @@ cardsData.forEach((data) => {
   addClickEventToImage(cardElement);
 });
 
-const popup = document.querySelector('.popup');
+// Função para abrir o popup ao clicar na imagem do card
 
 function addClickEventToImage(card) {
   const image = card.querySelector('.card__image');
@@ -80,8 +108,7 @@ function handleImageClick(e) {
   openPopup(src, imageTitle);
 }
 
-const addButton = document.querySelector('.button__add');
-const create = document.querySelector('.create');
+// Adicionando evento de clique ao botão de adicionar para exibir o formulário de criação
 
 addButton.addEventListener('click', function () {
   create.classList.toggle('create-active');
@@ -89,9 +116,7 @@ addButton.addEventListener('click', function () {
   formCreateValidator.resetValidation();
 });
 
-const createButton = document.querySelector('.button__create');
-const nameCreate = document.querySelector('.create__name');
-const infoCreate = document.querySelector('.create__info');
+// Adicionando evento de clique ao botão de criação no formulário de criação
 
 createButton.addEventListener('click', function (event) {
   event.preventDefault();
@@ -114,13 +139,15 @@ createButton.addEventListener('click', function (event) {
   create.classList.toggle('create');
 });
 
-const exitButton = document.querySelector('.button__exit');
+// Adicionando evento de clique ao botão de saída no formulário de criação
 
 exitButton.addEventListener('click', function () {
   event.preventDefault();
   create.classList.remove('create-active');
   create.classList.add('create');
 });
+
+// Configuração para validação de formulários
 
 const formValidatorConfig = {
   formSelector: '.form, .create',
@@ -131,12 +158,15 @@ const formValidatorConfig = {
   errorSelector: '.span',
 };
 
+// Criando instâncias de FormValidator para os formulários de edição e criação
+
 const formEditValidator = new FormValidator(formValidatorConfig, document.querySelector('.form'));
 formEditValidator.enableValidation();
 
 const formCreateValidator = new FormValidator(formValidatorConfig, document.querySelector('.create'));
 formCreateValidator.enableValidation();
 
+// Adicionando um evento de escuta ao teclado para manipulação de eventos
 
 document.addEventListener('keydown', (event) => {
   handleKeydownEvent(event, form, create, popup);
