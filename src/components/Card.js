@@ -1,3 +1,26 @@
+import {
+  cardsData,
+  editButton,
+  form,
+  saveButton,
+  nameForm,
+  infoForm,
+  nameData,
+  infoData,
+  closeButton,
+  cardTemplate,
+  cardContainer,
+  popup,
+  addButton,
+  create,
+  createButton,
+  nameCreate,
+  infoCreate,
+  exitButton
+} from '../utils/constants.js';
+
+
+
 // Definição da classe Card
 export default class Card {
   constructor(data, templateSelector) {

@@ -1,3 +1,7 @@
+// Importando as regras de validação de formulário
+
+import FormValidator from '../components/FormValidator.js';
+
 // template inicial dos cards
 
 export const cardsData = [
@@ -52,3 +56,22 @@ export const createButton = document.querySelector('.button__create');
 export const nameCreate = document.querySelector('.create__name');
 export const infoCreate = document.querySelector('.create__info');
 export const exitButton = document.querySelector('.button__exit');
+
+// Configuração para validação de formulários
+
+export const formValidatorConfig = {
+  formSelector: '.form, .create',
+  inputSelector: '.form__name, .form__info, .create__name, .create__info',
+  submitButtonSelector: '.button__save, .button__create',
+  inactiveButtonClass: 'button__save-off, button__create-off',
+  inputErrorClass: 'input-invalid',
+  errorSelector: '.span',
+};
+
+// Criando instâncias de FormValidator para os formulários de edição e criação
+
+export const formEditValidator = new FormValidator(formValidatorConfig, document.querySelector('.form'));
+formEditValidator.enableValidation();
+
+export const formCreateValidator = new FormValidator(formValidatorConfig, document.querySelector('.create'));
+formCreateValidator.enableValidation();

@@ -79,8 +79,6 @@ class FormValidator {
   }
 }
 
+
 // Exportação da classe FormValidator como padrão
 export default FormValidator;
-
-  
-  
